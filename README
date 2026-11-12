@@ -1,0 +1,87 @@
+ C Preprocessor 
+
+A mini C programming project that implements the basic functionalities of a C preprocessor. It processes C source files before compilation by removing comments, handling header file inclusion, and performing macro substitution.
+
+Project Overview
+
+A C preprocessor is a program that processes source code before it is passed to the compiler. This project demonstrates how some of these preprocessing operations can be implemented using C programming.
+
+The project follows a modular programming approach, with separate source files for different preprocessing operations.
+
+Features
+-Comment Removal:Removes single-line (`//`) and multi-line (`/* ... */`) comments.
+-Header File Inclusion:Handles header file inclusion using `#include`.
+-Object-like Macros:Stores and replaces macro names with their corresponding values.
+-Function-like Macros:Supports basic function-like macro substitution.
+-Modular Design:Organizes functionality into separate C source and header files.
+-Makefile:Simplifies the compilation process.
+
+Technologies Used
+- C Programming
+- GCC Compiler
+- Linux
+- Makefile
+
+Project Structure
+```text
+C-Preprocessor/
+│
+├── main.c
+├── comment_remove.c
+├── header_inclusion.c
+├── macro_substitution.c
+├── preprocessor.h
+├── myheader.h
+├── inputfile.c
+├── Makefile
+└── README.md
+```
+
+How It Works
+The project follows these basic preprocessing stages:
+1. Reads the input C source file.
+2. Handles header file inclusion.
+3. Removes single-line and multi-line comments.
+4. Identifies macro definitions and stores them.
+5. Replaces macro names with their corresponding values.
+6. Generates the processed output file with the `.i` extension.
+
+
+How to Run
+Execute the program by providing the input C file:
+./mypreprocessor inputfile.c
+
+The processed output will be generated as:
+inputfile.i
+
+To view the output:
+cat inputfile.i
+
+Example
+Input (`inputfile.c`):
+
+#include <stdio.h>
+
+#define MAX 100
+
+// Sample comment
+
+int main()
+{
+    int num = MAX;
+    printf("%d\n", num);
+    return 0;
+}
+
+Expected processed output (`inputfile.i`):
+
+int main()
+{
+    int num = 100;
+    printf("%d\n", num);
+    return 0;
+}
+
+
+
+**Purpose:** To understand how a C preprocessor works internally through practical implementation using C programming.
